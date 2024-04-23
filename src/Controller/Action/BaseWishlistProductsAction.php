@@ -86,7 +86,7 @@ abstract class BaseWishlistProductsAction
         /** @var Session $session */
         $session = $this->requestStack->getSession();
 
-        foreach ($form->getErrors() as $error) {
+        foreach ($form->getErrors(true) as $error) {
             $session->getFlashBag()->add('error', $error->getMessage());
         }
 
